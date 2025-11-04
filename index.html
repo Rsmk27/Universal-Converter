@@ -7,35 +7,32 @@
     <meta name="description" content="A universal converter for currency, speed, age, area, data, length, mass, number systems, temperature, and volume.">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
-        <h1>Universal Converter Hub</h1>
+        <div class="logo">UCH</div>
         <div class="header-controls">
-            <input type="search" id="search-bar" placeholder="Search converters...">
-            <button id="theme-toggle">Toggle Theme</button>
+            <button id="theme-toggle"><i class="fas fa-sun"></i></button>
         </div>
     </header>
-    <nav id="sidebar">
-        <ul>
-            <li><a href="#currency">Currency</a></li>
-            <li><a href="#speed">Speed</a></li>
-            <li><a href="#age">Age</a></li>
-            <li><a href="#area">Area</a></li>
-            <li><a href="#data">Data</a></li>
-            <li><a href="#length">Length</a></li>
-            <li><a href="#mass">Mass</a></li>
-            <li><a href="#number-system">Number System</a></li>
-            <li><a href="#temperature">Temperature</a></li>
-            <li><a href="#volume">Volume</a></li>
-        </ul>
-    </nav>
-    <main id="main-content">
-        <!-- Converter cards will be dynamically generated here -->
+    <main>
+        <section class="hero">
+            <h1>Universal Converter Hub</h1>
+            <p>Convert Anything. Instantly.</p>
+            <div class="search-container">
+                <i class="fas fa-search"></i>
+                <input type="search" id="search-bar" placeholder="Search for a converter...">
+            </div>
+        </section>
+        <section id="converter-grid" class="converter-grid">
+            <!-- Converter cards will be dynamically generated here -->
+        </section>
     </main>
     <footer>
-        <p>Made by RSMK</p>
+        <p>© 2025 RSMK | Designed & Built with Precision</p>
     </footer>
+    <script src="theme.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

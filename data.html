@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converter</title>
+    <link rel="stylesheet" href="converter.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body data-converter="data">
+    <header>
+        <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i> Home</a>
+        <div class="logo">UCH</div>
+        <button id="theme-toggle"><i class="fas fa-sun"></i></button>
+    </header>
+    <main>
+        <div class="converter-container">
+            <h1 id="converter-title">Converter Title</h1>
+            <div class="converter-card">
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="input-value">Value</label>
+                        <input type="text" id="input-value" placeholder="Enter value">
+                    </div>
+                    <div class="input-group">
+                        <label for="from-unit">From</label>
+                        <select id="from-unit"></select>
+                    </div>
+                </div>
+                <div class="separator">
+                    <i class="fas fa-exchange-alt"></i>
+                </div>
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="output-value">Result</label>
+                        <input type="text" id="output-value" readonly>
+                    </div>
+                    <div class="input-group">
+                        <label for="to-unit">To</label>
+                        <select id="to-unit"></select>
+                    </div>
+                </div>
+                <div class="actions">
+                    <button id="clear-btn">Clear</button>
+                    <div class="tooltip" id="formula-tooltip">&#9432;<span class="tooltiptext"></span></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>© 2025 RSMK | Designed & Built with Precision</p>
+    </footer>
+    <script src="theme.js"></script>
+    <script src="data.js"></script>
+</body>
+</html>
