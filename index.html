@@ -1,38 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Universal Converter Hub</title>
-    <meta name="description" content="A universal converter for currency, speed, age, area, data, length, mass, number systems, temperature, and volume.">
+    <meta name="description"
+        content="A premium universal converter for currency, speed, age, area, data, length, mass, number systems, temperature, and volume.">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="assets/logo.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 </head>
-<body>
+
+<body data-theme="dark">
+    <!-- Header -->
     <header>
-        <div class="logo">UCH</div>
-        <div class="header-controls">
-            <button id="theme-toggle"><i class="fas fa-sun"></i></button>
+        <div class="logo-container" onclick="app.showHome()">
+            <img src="assets/logo.png" alt="UCH Logo" class="logo-img">
         </div>
+        <button id="theme-toggle" aria-label="Toggle Theme">
+            <i class="fas fa-sun"></i>
+        </button>
     </header>
+
     <main>
-        <section class="hero">
-            <h1>Universal Converter Hub</h1>
-            <p>Convert Anything. Instantly.</p>
-            <div class="search-container">
-                <i class="fas fa-search"></i>
-                <input type="search" id="search-bar" placeholder="Search for a converter...">
+        <!-- Home View -->
+        <div id="home-view">
+            <section class="hero">
+                <h1>Universal Converter Hub</h1>
+                <p>Convert anything, instantly. The most powerful and beautiful converter on the web.</p>
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="search" id="search-bar"
+                        placeholder="Search for a converter (e.g., Length, Currency)...">
+                </div>
+            </section>
+
+            <section id="converter-grid" class="converter-grid">
+                <!-- Cards injected by JS -->
+            </section>
+        </div>
+
+        <!-- Converter Application View -->
+        <div id="converter-app">
+            <div class="app-container">
+                <div class="app-header">
+                    <button class="back-btn" onclick="app.showHome()">
+                        <i class="fas fa-arrow-left"></i> Back to Hub
+                    </button>
+                    <h2 id="app-title">Length Converter</h2>
+                </div>
+
+                <div class="converter-body">
+                    <!-- Standard Converter Layout -->
+                    <div id="standard-converter">
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label for="amount">Value</label>
+                                <div class="input-wrapper">
+                                    <input type="number" id="amount" placeholder="0" step="any">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="input-row" style="align-items: center;">
+                            <div class="input-group">
+                                <label for="from-unit">From</label>
+                                <select id="from-unit"></select>
+                            </div>
+
+                            <div class="swap-btn-container">
+                                <button class="swap-btn" id="swap-btn" title="Swap Units">
+                                    <i class="fas fa-exchange-alt"></i>
+                                </button>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="to-unit">To</label>
+                                <select id="to-unit"></select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Custom Layout (e.g. for Age) if needed, can be toggled via JS -->
+                    <div id="custom-converter-input" style="display:none;"></div>
+
+                    <div class="result-display">
+                        <span id="result-label">Result</span>
+                        <div class="result-value" id="result">0</div>
+                    </div>
+                </div>
             </div>
-        </section>
-        <section id="converter-grid" class="converter-grid">
-            <!-- Converter cards will be dynamically generated here -->
-        </section>
+        </div>
     </main>
+
     <footer>
-        <p>© 2025 RSMK | Designed & Built with Precision</p>
+        <p>by <a href="https://its.rsmk.me" target="_blank" rel="noopener noreferrer">RSMK</a></p>
     </footer>
-    <script src="theme.js"></script>
+
     <script src="script.js"></script>
 </body>
+
 </html>
